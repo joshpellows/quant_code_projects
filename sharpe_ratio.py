@@ -3,12 +3,12 @@ import yfinance as yf
 import matplotlib.pyplot as plt
 import pandas as pd
 
-stock_data = yf.download('IGE', start= '2001-11-26', end= '2007-11-15').dropna()  #pulls in IGE data over 6 year window from yahoo finance
+stock_data = yf.download('IGE', start= '2001-11-26', end= '2010-11-15').dropna()  #pulls in IGE data over 6 year window from yahoo finance
 stock_data = stock_data['Close']
 stock_data.head()
 
 
-benchmark_data = yf.download('^GSPC', start='2001-11-26', end= '2007-11-15').dropna()#pulls in the Global Standard and poor's composite data over 6 year window from yahoo finance
+benchmark_data = yf.download('^GSPC', start='2001-11-26', end= '2010-11-15').dropna()#pulls in the Global Standard and poor's composite data over 6 year window from yahoo finance
 benchmark_data = benchmark_data[['Close']].rename(columns={'Close': 'S&P 500'})# pulls the close values over the 6 year window for the s&p 500
 benchmark_data.head()
 
